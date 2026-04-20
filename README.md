@@ -58,36 +58,59 @@ docker build -t testapp .
 # Step 11: Create Repository in Docker Hub
 
  Go to Docker Hub
+ 
 Click Create Repository
+
 Enter:
+
 Repository Name: testapp
+
 Description: (any)
+
 Visibility: Public or Private
+
 Click Create
+
 # Step 12: Generate Access Token
+
 Go to Profile → Account Settings
+
 In the left sidebar,
+
 Click personal  Access Token
 Enter:
+
 Description: my-token
+
 Expiry: choose any
+
 Permissions: Read, Write, Delete
+
 Click Generate
+
 Copy the token
+
 # Step 13: Login to Docker Hub
+
 docker login
+
 👉 Enter:
+
 Username: your username
+
 Password: paste access token
+
 # Step 14: Tag Image (Important)
 ```bash
 docker tag <old-image-name> <username>/testapp:v1
 
 ```
 Example:
+
 docker tag testapp alfia123/testapp:v1
 
 # step 15 Push Image
+
 👉 Image name must match your Docker Hub repository
 ```bash 
 docker push <username>/testapp:v1
@@ -95,9 +118,13 @@ docker push <username>/testapp:v1
 Example:  docker push alfia123/testapp:v1
 
 # Step 16: Verify
+
 Go to Docker Hub
+
 Open your repository testapp
+
 You will see image with tag v1
 
 # Quick Flow
+
 Create EC2 → Install Docker → Build Image → Create Repo → Login → Tag → Push → Verify
